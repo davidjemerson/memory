@@ -3,9 +3,9 @@ import Doctors from "./components/Doctors";
 import Nav from "./components/Nav";
 import Wrapper from "./components/Wrapper";
 import Title from "./components/Title";
-import Container from "./Container";
-import Row from "./Row";
-import Column from "./Column";
+import Container from "./components/Grid/Container";
+import Row from "./components/Grid/Row";
+import Column from "./components/Grid/Column";
 import "./App.css";
 import doctors from "./doctors.json";
 
@@ -31,7 +31,8 @@ class App extends Component {
     if (this.state.clicked.indexOf(id) === -1) {
       this.handleIncrement();
       this.setState({ clicked: this.state.clicked.concat(id) });
-    } else {
+    } 
+    else {
       this.handleReset();
     }
   };
@@ -42,22 +43,31 @@ class App extends Component {
       currentScore: newScore,
       message: ""
     });
-    if (newScore >= this.state.topScore) {
+    if (newScore > this.state.topScore) {
       this.setState({ topScore: newScore });
     }
-    else if (newScore === 12) {
-      this.setState({ message: "You win!" });
+    if (newScore === 12) {
+      this.setState({ message: "Time Lord Victorious" });
     }
     this.handleShuffle();
   };
 
   handleReset = () => {
-    this.setState({
-      currentScore: 0,
-      topScore: this.state.topScore,
-      message: "Regeneration!",
-      clicked: []
-    });
+    if (this.state.currentScore === 12) {
+      this.setState({
+        topScore: this.state.topScore,
+        message: "Round 2, Keep Going!",
+        clicked: []
+      });
+    }
+    else {
+      this.setState({
+        currentScore: 0,
+        topScore: this.state.topScore,
+        message: "Regeneration!",
+        clicked: []
+      });
+    } 
     this.handleShuffle();
   };
 
