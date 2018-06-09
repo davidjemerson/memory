@@ -1,0 +1,26 @@
+nav {
+    width: 100%;
+    font-size: 25px;
+    color: #eee;
+    margin-bottom: 25px;
+    background-color: #143d6a;
+    height: auto;
+  }
+  
+  nav li {
+    display: inline-block;
+    padding: 25px 0 0 0;
+    width: 25%;
+    text-align: center;
+  }
+  
+  ul {
+    display: flex;
+    align-items: center;
+  }
+  
+  @media only screen and (max-width: 750px) {
+    #cur-sco, #top-sco {
+      font-size: 25px;
+    }
+  }
