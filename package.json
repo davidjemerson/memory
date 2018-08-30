@@ -2,19 +2,31 @@
   "name": "doctorwhomemory",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://davidjemerson.github.io/memory",
   "dependencies": {
+    "gh-pages": "^1.2.0",
     "react": "^16.4.0",
     "react-dom": "^16.4.0",
     "react-scripts": "1.1.4"
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   },
   "main": "index.js",
-  "repository": "git@github.com:davidjemerson/memory.git",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/davidjemerson/memory.git"
+  },
   "author": "djemerson <djemerson@gmail.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "description": "This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).",
+  "bugs": {
+    "url": "https://github.com/davidjemerson/memory/issues"
+  },
+  "devDependencies": {}
 }
